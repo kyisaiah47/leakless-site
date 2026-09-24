@@ -3,7 +3,8 @@
 import { useMemo, useState } from "react";
 import NumberFlow from "@number-flow/react";
 import { GLYPH, type GlyphName } from "@/lib/phosphor";
-import { SOURCES, type GateMode } from "@/lib/product";
+import { PRODUCT, SOURCES, type GateMode } from "@/lib/product";
+import FAMILY from "@/lib/app-family.json";
 
 function Icon({ name, size = 16 }: { name: GlyphName; size?: number }) {
   return <svg aria-hidden="true" className="icon" width={size} height={size} viewBox="0 0 256 256" dangerouslySetInnerHTML={{ __html: GLYPH[name] }} />;
@@ -37,13 +38,13 @@ export default function Home() {
   return <main>
     <div className="top-rule"><span>leakless the gate</span><span>claims read from the package and live repository on 22 September 2026</span></div>
     <header className="masthead">
-      <div className="brand"><span className="brand-mark"><Icon name="shield-warning" size={22} /></span><strong>leakless</strong><button className="app-switch" aria-label="Open product switcher" onClick={() => setStripOpen((value) => !value)}><Icon name="caret-up-down" size={15} /></button></div>
+      <div className="brand"><span className="brand-mark"><img src="/icon.svg" alt="" width={22} height={22} /></span><strong>leakless</strong><button className="app-switch" aria-label="Open product switcher" onClick={() => setStripOpen((value) => !value)}><Icon name="caret-up-down" size={15} /></button></div>
       <div className="standing">LIVE URL, BUILD GATE</div>
       <nav aria-label="Main navigation"><a className="active" href="#console"><Icon name="terminal-window" />Console</a><a href="#contract"><Icon name="table" />Contract</a><a href="#method"><Icon name="list-checks" />Method</a><a href="#sources"><Icon name="arrow-square-out" />Source</a></nav>
       <div className="live"><span className="dot" /> READ 22 SEP 2026</div>
       <a className="action" href="https://github.com/kyisaiah47/leakless/blob/main/action.yml"><Icon name="arrow-square-out" /> Read the Action</a>
     </header>
-    {stripOpen && <div className="switcher"><span className="switch-label">COMPOUND LABS / DEV TOOLS</span><a href="https://breachprobe.thecompound.tech/"><Icon name="shield-warning" /> BreachProbe</a><a className="current" href="https://leakless.thecompound.tech/"><Icon name="prohibit" /> leakless</a></div>}
+    {stripOpen && <div className="switcher"><span className="switch-label">COMPOUND LABS / {FAMILY.label.toUpperCase()}</span>{FAMILY.apps.map((a) => <a key={a.slug} href={a.url} className={a.slug === PRODUCT.slug + '-site' ? 'current' : undefined}><img src={a.logo} alt="" width={16} height={16} />{a.name}</a>)}</div>}
     <div className="folio" aria-label="Package facts"><span><b>0</b> runtime dependencies</span><span><b>1</b> request per run</span><span><b>3</b> exit codes</span><span><b>2</b> named failure paths</span><span><b>90</b> second default timeout</span><span>VERSION <b>0.1.0</b></span><span>SCROLL RIGHT FOR MORE</span></div>
 
     <section className="headband" id="console"><div className="claim"><p className="eyebrow">GITHUB ACTION / DEPLOYED URL</p><h1>Make the deployed URL part of the build check.</h1><p className="lede">leakless scans a deployed URL with BreachProbe and fails the build on an exposed database or an open write path.</p></div><aside className="evidence-panel"><div><span>PACKAGE</span><b>kyisaiah47/leakless</b></div><div><span>VERSION</span><b>0.1.0</b></div><div><span>RUNTIME</span><b>Node 18 or newer</b></div><div><span>LICENSE</span><b>MIT</b></div><div><span>DEPENDENCIES</span><b>0</b></div></aside></section>
