@@ -1,7 +1,6 @@
 /* THE DEPLOY GATE. A deploy that ships nothing must not exit 0.
  *
- * Copied from deferless-site's verify-cf.mjs. ROUTES trimmed to what this repo actually serves:
- * leakless-site has no src/app/robots.ts, sitemap.ts or llms.txt route, only the one page.
+ * ROUTES are limited to what this repo actually serves: the page, robots, sitemap and llms route.
  */
 const base = (process.argv[2] || '').replace(/\/$/, '');
 if (!base) {
