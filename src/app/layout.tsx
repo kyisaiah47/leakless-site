@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   title: "leakless. The deployed URL is part of the build check.",
   description: "A GitHub Action that scans a deployed URL with BreachProbe and fails the build on an exposed database or an open write path.",
   metadataBase: new URL("https://leakless.thecompound.tech"),
+  alternates: { canonical: "https://leakless.thecompound.tech/" },
+  openGraph: {
+    title: "leakless. The deployed URL is part of the build check.",
+    description: "A GitHub Action that scans a deployed URL with BreachProbe and fails the build on an exposed database or an open write path.",
+    url: "https://leakless.thecompound.tech/",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
