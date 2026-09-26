@@ -1,7 +1,7 @@
 #!/bin/bash
 # scripts/deploy.sh for leakless-site. Cloudflare Workers.
 #
-# Copied from deferless-site's deploy.sh, the sibling built to the same spec. This repo was
+# This deploy chain follows the estate's product deploy shape. This repo was
 # built by the oss-sync site rollout on 2026-09-22 with no deploy.sh and no verify-cf.mjs /
 # layout-gate.mjs, so it never entered deploy_repo_list and never got a Worker on the account:
 # the live host answered 307 off the *.thecompound.tech wildcard, which reads exactly like a

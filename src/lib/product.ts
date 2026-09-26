@@ -4,7 +4,7 @@ export const PRODUCT = {
   host: "leakless.thecompound.tech",
   repo: "https://github.com/kyisaiah47/leakless",
   version: "0.1.0",
-  headline: "Make the deployed URL part of the build check.",
+  headline: "A GitHub Action that scans a deployed URL with BreachProbe and fails the build on an exposed database or an open write path.",
   blurb: "A GitHub Action that scans a deployed URL with BreachProbe and fails the build on an exposed database or an open write path.",
   accent: "#C8B14F",
   readAt: "2026-09-25",
@@ -30,6 +30,11 @@ export const SOURCES = [
   { id: "dependencies", cite: "package.json / dependencies", quote: "dependencies: {}", url: "https://github.com/kyisaiah47/leakless/blob/main/package.json", read_at: "2026-09-25" },
   { id: "license-file", cite: "package.json / license", quote: "license: MIT", url: "https://github.com/kyisaiah47/leakless/blob/main/package.json", read_at: "2026-09-25" },
   { id: "license", cite: "README / licence", quote: "MIT. Built and used in production by Compound Labs.", url: "https://github.com/kyisaiah47/leakless#licence", read_at: "2026-09-25" },
+  { id: "output", cite: "README / outputs", quote: "The scan score, 0 to 100, empty when unreachable.", url: "https://github.com/kyisaiah47/leakless#outputs", read_at: "2026-09-25" },
+  { id: "exit-zero", cite: "README / exit codes", quote: "0 reachable, and neither named condition was found", url: "https://github.com/kyisaiah47/leakless#exit-codes", read_at: "2026-09-25" },
+  { id: "exit-one", cite: "README / exit codes", quote: "1 an exposed database, an open write path, or the grade floor was crossed", url: "https://github.com/kyisaiah47/leakless#exit-codes", read_at: "2026-09-25" },
+  { id: "exit-two", cite: "README / exit codes", quote: "2 the gate could not run. Not a pass, and it never collapses into 0", url: "https://github.com/kyisaiah47/leakless#exit-codes", read_at: "2026-09-25" },
+  { id: "no-dependencies", cite: "README / local use", quote: "No build step, no bundler, zero runtime dependencies.", url: "https://github.com/kyisaiah47/leakless#local-use", read_at: "2026-09-25" },
 ] as const;
 
 export const ROUTES = ["/"] as const;

@@ -9,7 +9,7 @@ const checks = [];
 const ok = (name, detail) => checks.push([name, true, detail]);
 const fail = (name, detail) => checks.push([name, false, detail]);
 const files = [];
-const walk = (dir) => { for (const entry of fs.readdirSync(dir, { withFileTypes: true })) { if (["node_modules", ".next", ".next-stale-check", ".git", "reference-shots", "review", "AGENTS.md", "CLAUDE.md"].includes(entry.name)) continue; const full = path.join(dir, entry.name); if (entry.isDirectory()) walk(full); else files.push(full); } };
+const walk = (dir) => { for (const entry of fs.readdirSync(dir, { withFileTypes: true })) { if (["node_modules", ".next", ".next-stale-check", ".open-next", ".git", "reference-shots", "review", "AGENTS.md", "CLAUDE.md"].includes(entry.name)) continue; const full = path.join(dir, entry.name); if (entry.isDirectory()) walk(full); else files.push(full); } };
 walk(root);
 const source = read("src/lib/product.ts");
 const css = read("src/app/globals.css");

@@ -10,6 +10,9 @@ if (!base) {
 
 const ROUTES = [
   ['/', 200],
+  ['/robots.txt', 200],
+  ['/sitemap.xml', 200],
+  ['/llms.txt', 200],
 ];
 
 async function tryOnce(path, want) {
