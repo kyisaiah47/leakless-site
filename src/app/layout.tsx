@@ -13,11 +13,12 @@ export const metadata: Metadata = {
   alternates: { canonical: `https://${PRODUCT.host}/` },
   icons: { icon: "/icon.svg" },
   openGraph: {
-    title: PRODUCT.headline,
-    description: PRODUCT.blurb,
+    title: `${PRODUCT.name} — Fails the build on an exposed database`,
+    description: `A GitHub Action that runs BreachProbe on a deployed URL. ${PRODUCT.blurb}`,
     url: `https://${PRODUCT.host}/`,
     type: "website",
   },
+  twitter: { card: "summary_large_image", title: PRODUCT.name, description: "A GitHub Action that runs BreachProbe on a deployed URL." },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

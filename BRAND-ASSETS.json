@@ -1,0 +1,5 @@
+{
+  "product": "leakless",
+  "tagline": "Fails the build on an exposed database",
+  "description": "A GitHub Action that runs BreachProbe on a deployed URL."
+}
