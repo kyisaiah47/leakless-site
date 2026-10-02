@@ -67,7 +67,7 @@ jobs:
     id: "local",
     label: "Once, from your terminal",
     file: "terminal",
-    text: `npm i -D leakless
+    text: `npm i -D github:kyisaiah47/leakless
 npx leakless gate --url https://example.com --owner-confirmed true`,
   },
 ] as const;
