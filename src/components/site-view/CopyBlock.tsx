@@ -24,7 +24,7 @@ export default function CopyBlock({ text, file }: { text: string; file: string }
         {shown?.ok ? (file === 'terminal' ? 'Copied. Paste it into a terminal.' : 'Copied. Paste it into the workflow file.') : 'Copy it'}
       </button>
       <p className="sv-copy-status" role="status" aria-live="polite">
-        {shown && !shown.ok ? 'This browser blocked the clipboard. Select the text above and copy it by hand.' : ''}
+        {shown && !shown.ok ? 'This browser blocked the clipboard. Select the text above and copy it manually.' : ''}
       </p>
     </div>
   );

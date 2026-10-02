@@ -93,7 +93,7 @@ export default function Welcome() {
         </button>
       </header>
       <div className="sv-welcome-intro">
-        <h2 id="sv-welcome-title">Would your build stop if your live app leaked its database?</h2>
+        <h2 id="sv-welcome-title">The build stops when the live app leaks its database.</h2>
         <p>
           leakless is a GitHub Action. It scans the deployed URL with BreachProbe after a deploy. It fails the build on an
           exposed database or an open write path.
@@ -106,14 +106,13 @@ export default function Welcome() {
         </div>
         <p>A deploy of {EXAMPLE.host} finished. The Action scanned it once.</p>
         <p className="sv-illustration-answer">
-          Scanned {EXAMPLE.host}: {EXAMPLE.score}/100, grade {EXAMPLE.grade}. Header gaps only, so the job passes.
-          <strong>EXIT {EXAMPLE.exit}</strong>
+          The scan covered {EXAMPLE.host}, which scored {EXAMPLE.score}/100 and received grade {EXAMPLE.grade}. The scan found header gaps only, so the job passes.<strong>EXIT {EXAMPLE.exit}</strong>
         </p>
-        <p>An exposed database or a leaked service_role key would print on the run and fail the job.</p>
+        <p>An exposed database or a leaked service_role key prints on the run and fails the job.</p>
       </section>
       <section className="sv-welcome-choose">
         <div>
-          <h3>How would you like to explore?</h3>
+          <h3>Choose how to explore.</h3>
           <p>You can switch anytime.</p>
         </div>
         <div className="sv-choices">
@@ -123,7 +122,7 @@ export default function Welcome() {
               <span aria-hidden="true">↗</span>
             </span>
             <strong>See more at once.</strong>
-            <span>A compact layout with more data and controls on screen.</span>
+            <span>Use a compact layout that shows more data and controls on screen.</span>
           </button>
           <button type="button" onClick={() => select('simple')}>
             <span>
@@ -131,7 +130,7 @@ export default function Welcome() {
               <span aria-hidden="true">↗</span>
             </span>
             <strong>Start with the essentials.</strong>
-            <span>A roomier overview with details you can open as you go.</span>
+            <span>Use a roomier overview that lets you open details as you go.</span>
           </button>
         </div>
       </section>

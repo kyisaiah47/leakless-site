@@ -29,20 +29,19 @@ export default function SimpleHome() {
           <section className="sv-hero">
             <div className="sv-pitch">
               <span className="sv-label">GITHUB ACTION · DEPLOYED URL</span>
-              <h1>Fail the build when your live app leaks data.</h1>
+              <h1>The Action fails the build when your live app leaks data.</h1>
               <p>
                 Your tests check the code you wrote. leakless checks the app you deployed. It scans the live URL with
                 BreachProbe and fails the build on an exposed database or an open write path.
               </p>
               <p className="sv-qualifier">
-                Free, MIT licence. Node 18 or newer. Zero runtime dependencies. Scan only a URL you own or are
-                authorised to scan.
+                leakless uses the MIT licence. It requires Node 18 or newer. It has zero runtime dependencies. Scan only a URL you own or are authorised to scan.
               </p>
             </div>
 
             <div className="sv-card sv-action" id="start">
               <div className="sv-step"><span>01 / ADD IT TO A REPO</span><span>FREE</span></div>
-              <h2>Pick when it runs, then copy it.</h2>
+              <h2>Choose when it runs, then copy it.</h2>
               <p>Paste a workflow into your repo, or run it once from a terminal. Each run makes one scan.</p>
               <ThemedSelect
                 label="When it runs"
@@ -52,8 +51,7 @@ export default function SimpleHome() {
               />
               <CopyBlock text={workflow.text} file={workflow.file} />
               <p className="sv-terms">
-                No account. <code>owner-confirmed: &apos;true&apos;</code> is required, and the Action never sets it for
-                you.
+                You do not need an account. <code>owner-confirmed: &apos;true&apos;</code> is required, and the Action never sets it for you.
               </p>
             </div>
           </section>
@@ -62,7 +60,7 @@ export default function SimpleHome() {
             <div className="sv-section-intro">
               <div>
                 <span className="sv-label">02 / WHAT YOU&apos;LL SEE</span>
-                <h2 id="sv-see">A pass or a fail you can read.</h2>
+                <h2 id="sv-see">Each run returns a pass or a fail that you can read.</h2>
               </div>
               <p>Each run writes a short report on the job. Open the findings when you want the detail.</p>
             </div>
@@ -70,12 +68,10 @@ export default function SimpleHome() {
             <div className="sv-card sv-result">
               <div className="sv-step"><span>EXAMPLE RESULT</span><span>From the leakless README</span></div>
               <h3>
-                The job passes. {EXAMPLE.host} scored {EXAMPLE.score}/100, grade {EXAMPLE.grade}, and neither named
-                condition fired.
+                The job passes. {EXAMPLE.host} scored {EXAMPLE.score}/100, received grade {EXAMPLE.grade}, and triggered neither named condition.
               </h3>
               <p>
-                The scan returned {EXAMPLE.findings.length} findings. All of them are {[...categories].join(', ')} findings at{' '}
-                {[...severities].join(' or ')} severity. The run ends with exit {EXAMPLE.exit}.
+                The scan returned {EXAMPLE.findings.length} findings. All findings are {[...categories].join(', ')} findings at {[...severities].join(' or ')} severity. The run ends with exit {EXAMPLE.exit}.
               </p>
               <Disclosure title={`See the ${EXAMPLE.findings.length} findings`}>
                 <ul className="sv-findings">
@@ -103,9 +99,9 @@ export default function SimpleHome() {
             <div className="sv-section-intro">
               <div>
                 <span className="sv-label">03 / WHAT FAILS THE BUILD</span>
-                <h2 id="sv-fails">Three things fail the job.</h2>
+                <h2 id="sv-fails">Three checks fail the job.</h2>
               </div>
-              <p>Each named check is its own input, so you can turn either one off. The grade floor sits under both.</p>
+              <p>Each named check is its own input, so you can turn either one off. The grade floor applies to both.</p>
             </div>
             <div className="sv-conditions">
               {CONDITIONS.map((c) => (
@@ -125,7 +121,7 @@ export default function SimpleHome() {
                   </li>
                 ))}
               </ul>
-              <p className="sv-note">An unreachable URL is exit 2. It is never reported as a pass.</p>
+              <p className="sv-note">An unreachable URL produces exit 2. The Action never reports it as a pass.</p>
             </div>
           </section>
 
@@ -136,8 +132,7 @@ export default function SimpleHome() {
                 <h2 id="sv-cost">The Action is free.</h2>
               </div>
               <p>
-                leakless is MIT licensed. It runs BreachProbe&apos;s free scan. It does not run BreachProbe&apos;s paid,
-                authenticated cross-tenant probe.
+                leakless has an MIT licence. It runs BreachProbe&apos;s free scan. It does not run BreachProbe&apos;s paid, authenticated cross-tenant probe.
               </p>
             </div>
           </section>
@@ -146,11 +141,11 @@ export default function SimpleHome() {
             <div className="sv-section-intro">
               <div>
                 <span className="sv-label">05 / QUESTIONS</span>
-                <h2 id="sv-questions">A few useful answers.</h2>
+                <h2 id="sv-questions">Useful answers</h2>
               </div>
-              <p>Read these before you add it to a repo.</p>
+              <p>Read these answers before you add the Action to a repo.</p>
             </div>
-            <Disclosure title="Which inputs can I set?">
+            <Disclosure title="Inputs you can set">
               <ul className="sv-inputs">
                 {INPUTS.map((i) => (
                   <li key={i.name}>
@@ -160,10 +155,10 @@ export default function SimpleHome() {
                 ))}
               </ul>
             </Disclosure>
-            <Disclosure title="Does it retry a failed scan?">
+            <Disclosure title="Retry behavior after a failed scan">
               <p><Code text={RATE_LIMIT} /></p>
             </Disclosure>
-            <Disclosure title="What does leakless not check?">
+            <Disclosure title="Checks that leakless does not perform">
               <ul className="sv-plain">
                 {LIMITS.map((l) => (
                   <li key={l.head}><strong>{l.head}.</strong> {cap(l.say)}</li>
@@ -171,7 +166,7 @@ export default function SimpleHome() {
               </ul>
             </Disclosure>
             <div className="sv-support">
-              <h3>Need a hand?</h3>
+              <h3>Support</h3>
               <p>
                 Email <a href="mailto:hello@thecompound.tech">hello@thecompound.tech</a> with your workflow file and the
                 job&apos;s output.
@@ -203,7 +198,7 @@ export function SimpleNotFound() {
               <span className="sv-label">404</span>
               <h1>This page does not exist.</h1>
             </div>
-            <p>The site is one page. Everything leakless does is on it.</p>
+            <p>The site has one page. That page contains everything leakless does.</p>
           </section>
           <nav className="sv-next" aria-label="Next steps">
             <Link href="/#start">Add it to a repo <span aria-hidden="true">↗</span></Link>
