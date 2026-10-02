@@ -166,7 +166,7 @@ export default function SimpleHome() {
               </ul>
             </Disclosure>
             <div className="sv-support">
-              <h3>Support</h3>
+              <h3>Need help with Leakless?</h3>
               <p>
                 Email <a href="mailto:hello@thecompound.tech">hello@thecompound.tech</a> with your workflow file and the
                 job&apos;s output.

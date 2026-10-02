@@ -93,7 +93,7 @@ export default function Welcome() {
         </button>
       </header>
       <div className="sv-welcome-intro">
-        <h2 id="sv-welcome-title">The build stops when the live app leaks its database.</h2>
+        <h2 id="sv-welcome-title">Would your build stop if your live app exposed its database?</h2>
         <p>
           leakless is a GitHub Action. It scans the deployed URL with BreachProbe after a deploy. It fails the build on an
           exposed database or an open write path.
@@ -112,7 +112,7 @@ export default function Welcome() {
       </section>
       <section className="sv-welcome-choose">
         <div>
-          <h3>Choose how to explore.</h3>
+          <h3>How would you like to explore Leakless?</h3>
           <p>You can switch anytime.</p>
         </div>
         <div className="sv-choices">
