@@ -17,3 +17,6 @@ h1,.lede{max-width:none}
 .folio::after,.control-row::after,.table::after,.folio span:last-child{display:none}
 .table-note{display:none;color:var(--dim);font:10px var(--mono);letter-spacing:.08em;text-align:right;padding-top:7px}
 @media(max-width:760px){.table-note{display:block}}
+.band-in.split {
+  align-items: flex-start;
+}
