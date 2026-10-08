@@ -12,7 +12,13 @@ export default function ViewControls() {
         <button type="button" onClick={() => mode.choose('console')} aria-pressed={mode.view === 'console'}>
           Console
         </button>
-        <button type="button" onClick={() => mode.choose('simple')} aria-pressed={mode.view === 'simple'}>
+        <button
+          type="button"
+          onClick={() => mode.choose('simple')}
+          aria-pressed={mode.view === 'simple'}
+          disabled={!mode.hasSimple}
+          title={mode.hasSimple ? undefined : 'This page has no Simple view'}
+        >
           Simple
         </button>
       </div>
